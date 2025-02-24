@@ -1,4 +1,4 @@
-// Production-optimized build script
+// Production-optimized build script for cluster architecture
 import { build } from "bun";
 
 interface BuildConfig {
@@ -9,7 +9,7 @@ interface BuildConfig {
 }
 
 const config: BuildConfig = {
-  entrypoints: ["app.ts"],
+  entrypoints: ["cluster.ts"],  // Updated entrypoint from app.ts to cluster.ts
   outdir: "dist",
   naming: "[dir]/[name].[ext]", // Keep file structure
   minify: true
@@ -29,7 +29,9 @@ try {
     },
     target: "bun",
     sourcemap: "external",
-    drop: ["console", "debugger"],
+    // In cluster mode, we might want to keep console logs for debugging worker status
+    // But we can still drop debugger statements
+    drop: ["debugger"],
     define: {
       "process.env.NODE_ENV": JSON.stringify("production")
     }
