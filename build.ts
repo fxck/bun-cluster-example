@@ -1,3 +1,4 @@
+// Production-optimized build script
 import { build } from "bun";
 
 interface BuildConfig {
@@ -5,7 +6,7 @@ interface BuildConfig {
   outdir: string;
   naming: string;
   minify: boolean;
-  target: string[];
+  target: string;
 }
 
 const config: BuildConfig = {
@@ -13,7 +14,7 @@ const config: BuildConfig = {
   outdir: "dist",
   naming: "[dir]/[name].[ext]", // Keep file structure
   minify: true,
-  target: ["bun", "node"]       // Build for both Bun and Node targets
+  target: "bun"       // Build for Bun runtime (use "node" for Node.js)
 };
 
 console.log("Building for production...");
