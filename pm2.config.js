@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   apps: [{
     name: process.env.APP_NAME || "bun-app",
     script: "dist/app.js",
@@ -21,4 +21,4 @@ export default {
       PM2_LOG_LEVEL: process.env.LOG_LEVEL || 'info'
     }
   }]
-}
+};
