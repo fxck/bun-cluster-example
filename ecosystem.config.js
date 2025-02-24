@@ -1,10 +1,9 @@
-// PM2 configuration using CommonJS format for maximum compatibility
 module.exports = {
   apps: [{
     name: process.env.APP_NAME || "bun-app",
-    script: "./dist/app.js",  // Using relative path with explicit extension
+    script: "./dist/app.js",
     interpreter: "bun",
-    instances: "max", // Use all available CPUs
+    instances: "max",
     exec_mode: "cluster",
     max_memory_restart: "500M",
     exp_backoff_restart_delay: 100,
