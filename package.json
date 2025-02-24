@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "pm2-runtime start pm2.config.js",
+    "start": "pm2-runtime start pm2.config.cjs",
     "build": "bun build.ts",
     "dev": "bun run app.ts"
   },
