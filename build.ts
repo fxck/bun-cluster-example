@@ -6,15 +6,13 @@ interface BuildConfig {
   outdir: string;
   naming: string;
   minify: boolean;
-  target: string;
 }
 
 const config: BuildConfig = {
   entrypoints: ["app.ts"],
   outdir: "dist",
   naming: "[dir]/[name].[ext]", // Keep file structure
-  minify: true,
-  target: "bun"       // Build for Bun runtime (use "node" for Node.js)
+  minify: true
 };
 
 console.log("Building for production...");
@@ -29,7 +27,7 @@ try {
       identifiers: true,
       syntax: true
     },
-    target: config.target,
+    target: "bun",      // Using the string literal directly
     sourcemap: "external",      // Generate external sourcemaps for debugging
     drop: ["console", "debugger"], // Remove debugging code
     define: {
