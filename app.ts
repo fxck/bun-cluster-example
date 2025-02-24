@@ -1,3 +1,5 @@
+import { serve } from "bun";
+
 // Get environment variables with type safety
 const ENV = {
   NODE_ENV: process.env.NODE_ENV || 'development',
@@ -11,7 +13,7 @@ const ENV = {
 console.log(`Starting ${ENV.APP_NAME} in ${ENV.NODE_ENV} mode`);
 console.log(`Environment configuration: ${JSON.stringify(ENV, null, 2)}`);
 
-const server = Bun.serve({
+const server = serve({
       port: ENV.PORT,
   fetch(req, server) {
     const url = new URL(req.url);
