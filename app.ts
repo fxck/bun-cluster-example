@@ -20,6 +20,7 @@ const instancePort = process.env.pm_id ? (ENV.PORT + parseInt(process.env.pm_id)
 console.log(`Starting ${ENV.APP_NAME} in ${ENV.NODE_ENV} mode`);
 console.log(`Worker ID: ${process.env.pm_id || 'standalone'}, PID: ${process.pid}`);
 console.log(`Binding to port: ${instancePort} (main port: ${ENV.PORT})`);
+console.log(`Environment configuration: ${JSON.stringify(ENV, null, 2)}`);
 
 serve({
   port: instancePort,
