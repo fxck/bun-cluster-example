@@ -24,7 +24,7 @@ console.log(`Environment configuration: ${JSON.stringify(ENV, null, 2)}`);
 
 serve({
   port: instancePort,
-  fetch(req, server) {
+  fetch(req) {
     const url = new URL(req.url);
 
     if (url.pathname === "/") {
