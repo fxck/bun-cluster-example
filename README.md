@@ -9,4 +9,8 @@ services:
     type: bun@1.2
     buildFromGit: https://github.com/fxck/bun-cluster-example
     enableSubdomainAccess: true
+    minContainers: 3
+    maxContainers: 3
+    verticalAutoscaling:
+      cpu: 3
 ```
