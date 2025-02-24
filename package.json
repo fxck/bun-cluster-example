@@ -1,9 +1,8 @@
 {
   "name": "bun-pm2-example",
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "start": "pm2-runtime start pm2.config.cjs",
+    "start": "pm2 start ecosystem.config.js",
     "build": "bun build.ts",
     "dev": "bun run app.ts"
   },
