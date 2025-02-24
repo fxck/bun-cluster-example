@@ -1,9 +1,3 @@
-import { serve } from "bun";
-
-interface ServerContext {
-  pid: number;
-}
-
 // Get environment variables with type safety
 const ENV = {
   NODE_ENV: process.env.NODE_ENV || 'development',
@@ -17,7 +11,7 @@ const ENV = {
 console.log(`Starting ${ENV.APP_NAME} in ${ENV.NODE_ENV} mode`);
 console.log(`Environment configuration: ${JSON.stringify(ENV, null, 2)}`);
 
-const server = serve<ServerContext>({
+const server = Bun.serve({
       port: ENV.PORT,
   fetch(req, server) {
     const url = new URL(req.url);
