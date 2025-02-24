@@ -22,7 +22,7 @@ console.log(`Worker ID: ${process.env.pm_id || 'standalone'}, PID: ${process.pid
 console.log(`Binding to port: ${instancePort} (main port: ${ENV.PORT})`);
 console.log(`Environment configuration: ${JSON.stringify(ENV, null, 2)}`);
 
-const server = serve({
+serve({
   port: instancePort,
   fetch(req, server) {
     const url = new URL(req.url);
