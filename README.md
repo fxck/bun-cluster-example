@@ -2,11 +2,11 @@
 
 ```yaml
 project:
-  name: bun-pm2-example
+  name: bun-cluster-example
 
 services:
-  - hostname: pm2bun
+  - hostname: buncluster
     type: bun@1.2
-    buildFromGit: https://github.com/fxck/bun-pm2-example
+    buildFromGit: https://github.com/fxck/bun-cluster-example
     enableSubdomainAccess: true
 ```

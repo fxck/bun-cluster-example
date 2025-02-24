@@ -1,15 +1,13 @@
 {
-  "name": "bun-pm2-example",
+  "name": "bun-cluster-example",
   "version": "0.0.0",
   "scripts": {
-    "start": "pm2 start ecosystem.config.js --no-daemon",
-    "build": "bun build.ts",
-    "dev": "bun run app.ts"
-  },
-  "dependencies": {
-    "pm2": "5.4.3"
+    "start": "bun dist/cluster.js",
+    "build": "bun build cluster.ts --outfile=dist/cluster.js",
+    "dev": "bun run cluster.ts"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "@types/node": "latest"
   }
 }

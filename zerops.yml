@@ -1,5 +1,5 @@
 zerops:
-  - setup: pm2bun
+  - setup: buncluster
     build:
       base: bun@1.2
       buildCommands:
@@ -7,7 +7,6 @@ zerops:
         - bun run build
       deployFiles:
         - dist
-        - ecosystem.config.js
         - package.json
         - node_modules
       cache:
@@ -17,10 +16,6 @@ zerops:
       ports:
         - port: 3000
           httpSupport: true
-      start: bun run start
+      start: bun dist/cluster.js
       envVariables:
         NODE_ENV: production
-        APP_NAME: bun-pm2-example
-        LOG_LEVEL: info
-        MAX_MEMORY_LIMIT: 512
-        ENABLE_METRICS: true
