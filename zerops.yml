@@ -1,5 +1,5 @@
 zerops:
-  - setup: bun0
+  - setup: pm2bun
     build:
       base: bun@1.2
       buildCommands:
