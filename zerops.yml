@@ -7,7 +7,7 @@ zerops:
         - bun run build
       deployFiles:
         - dist
-        - pm2.config.js
+        - ecosystem.config.js
         - package.json
         - node_modules
       cache:
