@@ -27,9 +27,9 @@ try {
       identifiers: true,
       syntax: true
     },
-    target: "bun",      // Using the string literal directly
-    sourcemap: "external",      // Generate external sourcemaps for debugging
-    drop: ["console", "debugger"], // Remove debugging code
+    target: "bun",
+    sourcemap: "external",
+    drop: ["console", "debugger"],
     define: {
       "process.env.NODE_ENV": JSON.stringify("production")
     }
