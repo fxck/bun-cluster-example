@@ -1,0 +1,26 @@
+zerops:
+  - setup: bun0
+    build:
+      base: bun@1.2
+      buildCommands:
+        - bun install
+        - bun run build
+      deployFiles:
+        - dist
+        - pm2.config.js
+        - package.json
+        - node_modules
+      cache:
+        - node_modules
+    run:
+      base: bun@1.2
+      ports:
+        - port: 3000
+          httpSupport: true
+      start: bun run start
+      envVariables:
+        NODE_ENV: production
+        APP_NAME: bun-pm2-example
+        LOG_LEVEL: info
+        MAX_MEMORY_LIMIT: 512
+        ENABLE_METRICS: true

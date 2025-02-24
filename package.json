@@ -1,0 +1,16 @@
+{
+  "name": "bun-pm2-example",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "pm2-runtime start pm2.config.js",
+    "build": "bun build.ts",
+    "dev": "bun run app.ts"
+  },
+  "dependencies": {
+    "pm2": "^5.3.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}
